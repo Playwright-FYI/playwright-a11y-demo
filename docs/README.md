@@ -1,5 +1,16 @@
 # Playwright For Accessibility Testing
 
+<details>
+<summary> Expand for handy route links </summary>
+    <ul>
+        <li><a href="./jQuery-UI/README.md">jQuery Samples</a></li>
+        <li><a href="./bootstrap/README.md">Bootstrap Samples</a></li>
+        <li><a href="./steps/README.md">Demo Steps</a></li>
+        <li><a href="./static/Playwright-FYI.code-profile">VS Code Profile</a></li>
+    </ul>
+</details>
+
+
 ## 1. Motivation
 
 [WebAIM](https://webaim.org/) - is an initiative that shares developer resources, training and guidance with _web accessibility in mind_. Their annual [Web AIM Million](https://webaim.org/projects/million/) report is a signature initiative that tracks the accessibility compliance of the top 1M sites every year, using the WAVE accessibilty engine. 
