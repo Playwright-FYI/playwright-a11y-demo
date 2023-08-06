@@ -1,0 +1,16 @@
+{
+  "name": "playwright-a11y-demo",
+  "version": "1.0.0",
+  "description": "[![pages-build-deployment](https://github.com/Playwright-FYI/playwright-a11y-demo/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Playwright-FYI/playwright-a11y-demo/actions/workflows/pages/pages-build-deployment) &nbsp;",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.36.2"
+  }
+}
