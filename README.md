@@ -41,30 +41,45 @@ You can view the production deployment at [the GitHub Pages endpoint](https://pl
 
 ## View Local Dev Server
 
-We can view the jquery-ui and bootstrap samples (static HTML) directly in a simple webserver (e.g., `python3 -m http.server`). 
-
-The challenge here is in previewing the HTML version of the _Markdown_ files. GitHub converts these to HTML when deploying to web pages, but how do we emulate that in a local devserver?
-
-### Experiment: Docsify
-
-I'm using [docsify](https://docsify.js.org/#/?id=docsify) which loads your Markdown into an index.html for viewing. We can now use:
+### For HTML Samples
+Both jQuery and Bootstrap folders contain _HTML_ files that make it easy to view them from any local webserver.  I prefer to use the built-in webserver in Python3, which is likely installed on most desktop environemnts.
 
 ```bash
-# Install docsify in dev env
-$ npm i docsify-cli -g
+# Start python server at project root
+python3 -m http.server
+Serving HTTP on :: port 8000 (http://[::]:8000/) ...
 
-# Initailize required folder 
-docsify init ./docs
+# Open browser to localhost:8000 to see folder listing
+#    - Click on `docs/jQuery-UI` 
+#      to view jQuery samples on a single page
+#    - Click on `docs/bootstrap`
+#      to get listing of sample subfolders
+#      click one (e.g., album) to see that sample
 
-# Preview locally
-$ docsify serve docs
 ```
 
-You don't need to change anything else. Docsify just adds an _index.html_ to the root of the folder hosted in GitHub Pages - and has that intelligently load and parse Markdown on the fly.
+### For Markdown Samples
 
-This means you can _also_ preview this site using `python3 -m https.server`.
+Markdown is just text by default and needs an additional processing step to be rendered into HTML that is served in GitHub Pages. We need a local devserver that is capable of making this translation for _GitHub Flavored Markdown_.
 
-_Note:_ This ends up creating custom URLs (with /#) as a side-effect, which interferes with our testing strategy. So for now, we will remove the docsify support (see `.parked` files) and revert to default GitHub Pages behavior. And simply test in production.
+A quick search of npm gave me [md-fileserver](https://github.com/commenthol/md-fileserver) as one option that I am choosing to use for now.
+
+```bash
+# Install the package in your local development environment
+$ npm install -g md-fileserver
+
+# Start the server from project root
+# Specifying the markdown folder you want server ('docs/`)
+mdstart docs     
+
+# This launches the browser to localhost:4000
+# showing the directory structure
+# You will need to manually click Markdown filenames
+# to see it render them as HTML
+# 🚨 | I have not validated if the HTML generated
+#      here is exactly the same as GitHub Pages 
+#      but it provides one equivalent for testing
+```
 
 ---
 
