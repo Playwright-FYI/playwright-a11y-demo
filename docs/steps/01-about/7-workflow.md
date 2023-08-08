@@ -1,1 +1,1 @@
-## 1.6 End-to-End Developer Workflow
+## 1.7 End-to-End Developer Workflow
